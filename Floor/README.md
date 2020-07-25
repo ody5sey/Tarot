@@ -47,7 +47,9 @@ cd /usr/local/share/sqlmap/ && ./sqlmap.py "$@"
 
 在Burpsuite的http请求中直接右键
 
-![Result](./img/imh.gif)
+<!-- ![Result](./img/imh.gif) -->
+
+
 
 
 
