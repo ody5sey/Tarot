@@ -517,7 +517,7 @@ public interface IBurpExtenderCallbacks
      * interface, and which the extension can use in its own UI.
      */
     IMessageEditor createMessageEditor(IMessageEditorController controller,
-            boolean editable);
+                                       boolean editable);
 
     /**
      * This method returns the command line arguments that were passed to Burp
@@ -705,7 +705,7 @@ public interface IBurpExtenderCallbacks
      * response.
      */
     IHttpRequestResponse makeHttpRequest(IHttpService httpService,
-            byte[] request);
+                                         byte[] request);
 
     /**
      * This method can be used to issue HTTP requests and retrieve their
@@ -802,7 +802,7 @@ public interface IBurpExtenderCallbacks
      * @param file The file to which the report will be saved.
      */
     void generateScanReport(String format, IScanIssue[] issues,
-            java.io.File file);
+                            java.io.File file);
 
     /**
      * This method is used to retrieve the contents of Burp's session handling

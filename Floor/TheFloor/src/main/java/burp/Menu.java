@@ -17,7 +17,6 @@ public class Menu implements IContextMenuFactory {
     @Override
     public List<JMenuItem> createMenuItems(IContextMenuInvocation invocation) {
 
-
         List<JMenuItem> items = new ArrayList<>();
 
         JMenuItem item = new JMenuItem("Send To Sqlmap");
@@ -30,11 +29,8 @@ public class Menu implements IContextMenuFactory {
 
             if (!dir.exists()) {// 判断目录是否存在
                 if (dir.mkdir()) {
-                    BurpExtender.stdout.println("文件夹创建成功");
 
                     successDir = true;
-                } else {
-                    BurpExtender.stdout.println("文件夹创建失败");
                 }
             } else {
                 successDir = true;
@@ -53,17 +49,19 @@ public class Menu implements IContextMenuFactory {
                 String domainName = domain.replace(".", "_") + "_" + port;
 
 
-                String domainPath = path+"/"+domainName;
+                String domainPath = path + "/" + domainName;
 
                 File domainDir = new File(domainPath);
 
+                boolean successDirSecond = false;
+
                 if (!domainDir.exists()) {// 判断目录是否存在
                     if (domainDir.mkdir()) {
-                        BurpExtender.stdout.println("文件夹创建成功");
+                        successDirSecond = true;
 
-                    } else {
-                        BurpExtender.stdout.println("文件夹创建失败");
                     }
+                } else {
+                    successDirSecond = true;
                 }
 
 
@@ -86,10 +84,10 @@ public class Menu implements IContextMenuFactory {
 
                 } catch (IOException e1) {
                     e1.printStackTrace();
-                    successDir = false;
+                    successDirSecond = false;
                 }
 
-                if (successDir) {
+                if (successDirSecond) {
                     String os = Utils.getVersion();
                     String txt = "";
 
@@ -115,6 +113,7 @@ public class Menu implements IContextMenuFactory {
 
 
         });
+
         items.add(item);
 
         return items;

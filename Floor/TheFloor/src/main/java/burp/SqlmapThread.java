@@ -19,7 +19,7 @@ public class SqlmapThread implements Runnable {
 
         String cmdBase;
 
-        // 此处不要用switch，似乎会锁死主线程
+        // 此处不要用switch，会锁死主线程
         if (osName.equals("macOS")) {
             cmdBase = "tell application \"Terminal\" \n\tactivate\n\tdo script \" " + String.format(cmd, "sqlmap") + "\"\nend tell";
 

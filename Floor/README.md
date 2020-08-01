@@ -5,7 +5,7 @@
 
 ## 0x02 安装
 
-首先从github下载floor.jar,然后让burpsuite加载floor.jar
+首先从github Release 下载TheFloor-1.0-SNAPSHOT.zip,解压zip文件,然后让burpsuite加载TheFloor-1.0-SNAPSHOT.jar
 
 ![Result](./img/img0.png)
 
